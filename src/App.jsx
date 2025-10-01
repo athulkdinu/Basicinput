@@ -6,8 +6,7 @@ function CollegeAdmissionForm() {
     email: "",
     phone: "",
     course: "",
-    admissionType: "",
-    comments: ""
+    admissionType: ""
   });
 
   const handleChange = (e) => {
@@ -19,8 +18,8 @@ function CollegeAdmissionForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const { fullName, email, phone, course, admissionType, comments } = formData;
-    if (!fullName || !email || !phone || !course || !admissionType || !comments) {
+    const { fullName, email, phone, course, admissionType } = formData;
+    if (!fullName || !email || !phone || !course || !admissionType) {
       alert("Please fill all the fields!");
       return;
     }
@@ -29,8 +28,7 @@ function CollegeAdmissionForm() {
 Email: ${email}
 Phone: ${phone}
 Course: ${course}
-Admission Type: ${admissionType}
-Comments: ${comments}`);
+Admission Type: ${admissionType}`);
   };
 
   const handleClear = () => {
@@ -39,8 +37,7 @@ Comments: ${comments}`);
       email: "",
       phone: "",
       course: "",
-      admissionType: "",
-      comments: ""
+      admissionType: ""
     });
   };
 
@@ -147,16 +144,6 @@ Comments: ${comments}`);
               <option value="Management Quota">Management Quota</option>
               <option value="Scholarship">Scholarship</option>
             </select>
-          </div>
-          <div>
-            <label>Comments:</label>
-            <textarea
-              name="comments"
-              value={formData.comments}
-              onChange={handleChange}
-              style={{ ...inputStyle, height: "80px" }}
-              placeholder="Any additional information..."
-            />
           </div>
           <div style={{ textAlign: "center", marginTop: "20px" }}>
             <button
